@@ -23,14 +23,14 @@ def get_current_branch() -> str:
 def get_main_branch() -> str:
     """获取主干分支名"""
     try:
-        # 尝试获取main分支
-        run_git_command(["git", "show-ref", "--verify", "refs/heads/main"])
-        return "main"
+        # 尝试获取master分支
+        run_git_command(["git", "show-ref", "--verify", "refs/heads/master"])
+        return "master"
     except:
         try:
             # 尝试获取master分支
-            run_git_command(["git", "show-ref", "--verify", "refs/heads/master"])
-            return "master"
+            run_git_command(["git", "show-ref", "--verify", "refs/heads/main"])
+            return "main"
         except:
             raise Exception("未找到主干分支(main或master)")
 
