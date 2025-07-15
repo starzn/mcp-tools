@@ -1,0 +1,23 @@
+{
+  "name": "gitMergeTerminal",
+  "version": "1.0.0",
+  "description": "Git merge terminal tool with TypeScript support",
+  "main": "dist/index.js",
+  "bin": {
+    "git-merge": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "keywords": ["git", "merge", "cli", "typescript"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0"
+  },
+  "dependencies": {}
+}
