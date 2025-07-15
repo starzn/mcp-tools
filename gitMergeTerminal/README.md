@@ -8,6 +8,8 @@
 - 支持合并到主干分支或测试分支
 - 支持 squash 合并
 - 支持自定义提交消息
+- 支持合并后自动推送到远程仓库
+- 完整的帮助文档
 
 ## 安装
 
@@ -45,7 +47,9 @@ node dist/index.js [参数]
 
 - `--test`: 合并到测试分支（默认为 'test'）
 - `--squash`: 使用 squash 合并
+- `--push`: 合并完成后推送到远程仓库
 - `-m <消息>`: 自定义提交消息
+- `--help, -h`: 显示帮助信息
 
 ## 示例
 
@@ -61,7 +65,27 @@ pnpm run start --squash -m "Feature: Add new functionality"
 
 # 合并到测试分支并使用 squash
 pnpm run start --test --squash -m "Fix: Bug fixes"
+
+# 合并后推送到远程仓库
+pnpm run start --push
+
+# 合并到测试分支并推送到远程
+pnpm run start --test --push
+
+# 完整示例：squash合并、自定义消息、推送到远程
+pnpm run start --squash -m "feat: 新增推送功能" --push
+
+# 显示帮助信息
+pnpm run start --help
 ```
+
+## 工作流程
+
+1. 自动检测当前分支和目标分支
+2. 切换到目标分支
+3. 拉取最新代码
+4. 执行合并操作
+5. 如果指定了 `--push` 参数，自动推送到远程仓库
 
 ## 项目结构
 
