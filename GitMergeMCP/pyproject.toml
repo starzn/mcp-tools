@@ -1,0 +1,9 @@
+[project]
+name = "gitmergemcp"
+version = "0.1.0"
+description = "git merge mcp tools"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mcp[cli]",
+]
